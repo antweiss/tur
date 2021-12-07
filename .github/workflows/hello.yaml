@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 jobs:                       # list of jobs
   special:
     runs-on: ubuntu-latest
-    if: contains('Hello world', 'llo')
+    if: contains(env.GITHUB_REF, 'feature')
     steps:
       - name: echo ref
         run: echo $GITHUB_REF
