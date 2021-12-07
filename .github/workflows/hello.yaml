@@ -1,5 +1,7 @@
 name: my-first-gh-workflow  # workflow name
-on: [push]                  # triggering event
+on:
+  schedule: 
+  - cron: '5 * * * *'
 env:
   COMPANY: Otomato
 jobs:                       # list of jobs
