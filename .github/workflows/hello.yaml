@@ -1,5 +1,5 @@
 name: my-first-gh-workflow  # workflow name
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 jobs:                       # list of jobs
   special:
     runs-on: ubuntu-latest
