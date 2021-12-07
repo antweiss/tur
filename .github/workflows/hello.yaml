@@ -4,4 +4,6 @@ jobs:                       # list of jobs
   say-hello:             #job name
     runs-on: ubuntu-latest
     steps:                  #list of steps
-      - run: echo Hello Github Actions
+      - run: echo Hello Github Actions  #step definition
+      - run: pwd #where are we?
+      - run: ls -la #let's look around
