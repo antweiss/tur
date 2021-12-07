@@ -3,7 +3,10 @@ on:
   schedule: 
   - cron: '*/5 * * * *'
   workflow_dispatch:
-    
+    inputs:
+      name:
+        description: name
+        default: none  
 env:
   COMPANY: Otomato
 jobs:                       # list of jobs
@@ -18,7 +21,7 @@ jobs:                       # list of jobs
           NAME: Octocat
   special:
     runs-on: ubuntu-latest
-    if: contains(env.GITHUB_REF, 'feature')
+    if: contains(github.ref, "feature")
     steps:
       - name: echo ref
         run: echo $GITHUB_REF
