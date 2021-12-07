@@ -1,11 +1,17 @@
 name: my-first-gh-workflow  # workflow name
 on: [push]                  # triggering event
+env:
+  COMPANY: Otomato
 jobs:                       # list of jobs
   say-hello:             #job name
     runs-on: ubuntu-latest
+    env:
+      SUBJECT: GithubActions
     steps:                  #list of steps
       - name: Say hello
-        run: echo Hello Github Actions  #step definition
+        run: echo "Hello ${NAME}. Today we're learning ${SUBJECT} with ${COMPANY}."
+        env: 
+          NAME: Octocat
       - name: Check out code
         uses: actions/checkout@v2
       - name: Show current directory
