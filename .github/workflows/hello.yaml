@@ -1,7 +1,9 @@
 name: my-first-gh-workflow  # workflow name
 on:
   schedule: 
-  - cron: '5 * * * *'
+  - cron: '*/5 * * * *'
+  workflow_dispatch:
+    
 env:
   COMPANY: Otomato
 jobs:                       # list of jobs
@@ -15,6 +17,13 @@ jobs:                       # list of jobs
         env: 
           NAME: Octocat
       - name: Check out code
+  special:
+  runs-on: ubuntu-latest
+  if: contains(env.GITHUB_REF, 'feature')
+  steps:
+    - name: echo ref
+      run: echo $GITHUB_REF
+    - 
         uses: actions/checkout@v2
       - name: Show current directory
         run: pwd #where are we?
