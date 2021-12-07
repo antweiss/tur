@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 jobs:                       # list of jobs
   special:
     runs-on: ubuntu-latest
-    if: ${{ contains("feature/1", 'feature') }}
+    if: true 
     steps:
       - name: echo ref
         run: echo $GITHUB_REF
