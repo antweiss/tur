@@ -1,22 +1,6 @@
 name: my-first-gh-workflow  # workflow name
-on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: name
-        default: none  
-env:
-  COMPANY: Otomato
+on: [workflow_dispatch]
 jobs:                       # list of jobs
-  say-hello:             #job name
-    runs-on: ubuntu-latest
-    env:
-      SUBJECT: GithubActions
-    steps:                  #list of steps
-      - name: Say hello
-        run: echo "Hello ${NAME}. Today we're learning ${SUBJECT} with ${COMPANY}."
-        env: 
-          NAME: Octocat
   special:
     runs-on: ubuntu-latest
     if: contains(github.ref, "feature")
