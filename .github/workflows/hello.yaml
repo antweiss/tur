@@ -21,6 +21,7 @@ jobs:                       # list of jobs
           NAME: Octocat
   special:
     runs-on: ubuntu-latest
+    if: contains(github.ref, "feature")
     steps:
       - name: echo ref
         run: echo $GITHUB_REF
