@@ -16,16 +16,9 @@ jobs:                       # list of jobs
         run: echo "Hello ${NAME}. Today we're learning ${SUBJECT} with ${COMPANY}."
         env: 
           NAME: Octocat
-      - name: Check out code
   special:
-  runs-on: ubuntu-latest
-  if: contains(env.GITHUB_REF, 'feature')
-  steps:
-    - name: echo ref
-      run: echo $GITHUB_REF
-    - 
-        uses: actions/checkout@v2
-      - name: Show current directory
-        run: pwd #where are we?
-      - run: ls -la #let's look around
-        name: Look around
+    runs-on: ubuntu-latest
+    if: contains(env.GITHUB_REF, 'feature')
+    steps:
+      - name: echo ref
+        run: echo $GITHUB_REF
